@@ -6,6 +6,7 @@ import com.example.superheroes.antiHero.service.AntiHeroService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -59,8 +60,10 @@ public class AntiHeroController {
     }
 
     @GetMapping
-    public List<AntiHeroDto> getAntiHeroes(){
+    public List<AntiHeroDto> getAntiHeroes(Pageable pageable){
+        int toSkip = pageable.getPageSize() * pageable.getPageNumber();
         var antiHeroList = StreamSupport.stream(service.findAllAntiHeroes().spliterator(),false)
+                .skip(toSkip).limit(pageable.getPageSize())
                 .toList();
         return antiHeroList.stream().map(this::convertToDto).collect(Collectors.toList());
     }
