@@ -2,7 +2,7 @@ package com.example.superheroes.antiHero.service;
 
 
 import com.example.superheroes.antiHero.entity.AntiHeroEntity;
-import com.example.superheroes.antiHero.exception.NotFoundException;
+import com.example.superheroes.exception.NotFoundException;
 import com.example.superheroes.antiHero.repository.AntiHeroRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

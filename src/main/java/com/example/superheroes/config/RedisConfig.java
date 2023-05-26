@@ -1,4 +1,4 @@
-package com.example.superheroes.antiHero.config;
+package com.example.superheroes.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

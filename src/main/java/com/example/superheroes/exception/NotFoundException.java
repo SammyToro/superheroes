@@ -1,4 +1,4 @@
-package com.example.superheroes.antiHero.exception;
+package com.example.superheroes.exception;
 
 public class NotFoundException extends RuntimeException{
 
