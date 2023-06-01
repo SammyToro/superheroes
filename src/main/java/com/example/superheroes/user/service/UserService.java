@@ -33,6 +33,10 @@ public class UserService {
         return mapper.map(dto,UserEntity.class);
     }
 
+    public UserEntity searchByEmail(String email){
+        return repo.findByEmail(email);
+    }
+
     public List<UserDto> findAllUsers(){
         var userEntityList = new ArrayList<>(repo.findAll());
         return userEntityList.stream().map(this::convertToDto).collect(Collectors.toList());

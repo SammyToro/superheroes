@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -19,6 +20,7 @@ import java.util.stream.StreamSupport;
 @RestController
 @RequestMapping("api/v1/anti-heroes")
 @AllArgsConstructor
+@PreAuthorize("isAuthenticated")
 public class AntiHeroController {
 
     private final AntiHeroService service;
