@@ -51,7 +51,7 @@ public class UserService {
 
     private byte[] createSalt(){
         var random = new SecureRandom();
-        var salt = new byte[218];
+        var salt = new byte[128];
         random.nextBytes(salt);
         return salt;
     }
