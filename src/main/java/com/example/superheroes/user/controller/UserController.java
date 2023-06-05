@@ -26,7 +26,7 @@ public class UserController {
         return userService.findUserById(id);
     }
 
-    @DeleteMapping("/api/v1/users/{id}")
+    @DeleteMapping("/api/v1/user/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteUserById(@PathVariable("id") UUID id){
         userService.removeUserById(id);
@@ -39,7 +39,7 @@ public class UserController {
         return userService.createUser(userDto,userDto.getPassword());
     }
 
-    @PutMapping("/api/v1/users/{id}")
+    @PutMapping("/api/v1/user/{id}")
     public void putUser(@PathVariable("id") UUID id,@Valid @RequestBody UserDto userDto)
         throws NoSuchAlgorithmException{
         userService.updateUser(id,userDto, userDto.getPassword());
