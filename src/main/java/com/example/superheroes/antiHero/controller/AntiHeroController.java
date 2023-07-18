@@ -34,7 +34,7 @@ public class AntiHeroController {
         return mapper.map(dto, AntiHeroEntity.class);
     }
 
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public AntiHeroDto getAntiHeroById(@PathVariable("id") UUID id){
         return convertToDto(service.findAntiHeroById(id));
     }
@@ -46,7 +46,7 @@ public class AntiHeroController {
         return convertToDto(antiHero);
     }
 
-    @PutMapping("/id")
+    @PutMapping("/{id}")
     public void putAntiHero(@PathVariable("id") UUID id,@Valid @RequestBody AntiHeroDto antiHeroDto){
         if(!id.equals(antiHeroDto.getId())) throw new ResponseStatusException(
                 HttpStatus.BAD_REQUEST,
@@ -56,7 +56,7 @@ public class AntiHeroController {
         service.updateAntiHero(id,entity);
     }
 
-    @DeleteMapping("/id")
+    @DeleteMapping("/{id}")
     public void deleteAntiHeroById(@PathVariable("id") UUID id){
         service.removeAntiHeroById(id);
     }
