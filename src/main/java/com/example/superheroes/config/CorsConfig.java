@@ -16,7 +16,7 @@ public class CorsConfig {
     CorsFilter corsFilter(){
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.setAllowCredentials(true);
-        corsConfiguration.setAllowedOrigins(List.of("http://localhost:4200"));
+        corsConfiguration.setAllowedOrigins(List.of("https://superheroes-qn46.onrender.com"));
         corsConfiguration.setAllowedHeaders(Arrays.asList(
                 "Origin",
                 "Access-Control-Allow-Origin",
