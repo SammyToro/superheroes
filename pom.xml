@@ -52,17 +52,35 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-redis</artifactId>
-			<version>3.0.5</version>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+				<exclusion>
+					<groupId>io.lettuce</groupId>
+					<artifactId>lettuce-core</artifactId>
+				</exclusion>
+            </exclusions>
+        </dependency>
 		<dependency>
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
-			<version>5.0.0-beta1</version>
-			<type>jar</type>
 		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.data</groupId>-->
+<!--			<artifactId>spring-data-redis</artifactId>-->
+<!--			<version>3.0.5</version>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>redis.clients</groupId>-->
+<!--			<artifactId>jedis</artifactId>-->
+<!--			<version>5.0.0-beta1</version>-->
+<!--			<type>jar</type>-->
+<!--		</dependency>-->
 		<!--Dto mapper-->
 		<dependency>
 			<groupId>org.modelmapper</groupId>
