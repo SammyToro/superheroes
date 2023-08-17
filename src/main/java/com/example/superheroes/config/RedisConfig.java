@@ -1,6 +1,5 @@
 package com.example.superheroes.config;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
@@ -14,17 +13,17 @@ import java.util.UUID;
 @Configuration
 public class RedisConfig {
 
-    @Value("{redis.hostname}")
-    private String redisHostName;
-
-    @Value("{redis.port}")
-    private int redisPort;
-
-    @Value("{redis.username}")
-    private String redisUsername;
-
-    @Value("{redis.password}")
-    private String redisPassword;
+//    @Value("{redis.hostname}")
+//    private String redisHostName;
+//
+//    @Value("{redis.port}")
+//    private int redisPort;
+//
+//    @Value("{redis.username}")
+//    private String redisUsername;
+//
+//    @Value("{redis.password}")
+//    private String redisPassword;
 
     @Bean
     JedisConnectionFactory jedisConnectionFactory(){
