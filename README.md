@@ -2,7 +2,7 @@
  
 ## Development
 This is a simple project created using `Angular` and `Spring Boot` . Data for the project was
-stored in `Postgres` and caching was implemented using `Redis`. Authentication was implemented using
+stored in `Postgres`. Authentication was implemented using
 `Json Web Token` and state management using `NgRx`. An api was built to help the frontend communicate with 
 the backend The frontend was tested using `Cypress` and the backend  used `Mockito`.
 
