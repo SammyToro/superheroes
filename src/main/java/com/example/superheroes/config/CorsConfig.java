@@ -1,5 +1,6 @@
 package com.example.superheroes.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
@@ -12,11 +13,14 @@ import java.util.List;
 @Configuration
 public class CorsConfig {
 
+    @Value("${cors.url}")
+    private String corsUrl;
+
     @Bean
     CorsFilter corsFilter(){
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.setAllowCredentials(true);
-        corsConfiguration.setAllowedOrigins(List.of("https://superheroes-qn46.onrender.com"));
+        corsConfiguration.setAllowedOrigins(List.of(corsUrl));
         corsConfiguration.setAllowedHeaders(Arrays.asList(
                 "Origin",
                 "Access-Control-Allow-Origin",
