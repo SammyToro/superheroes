@@ -29,10 +29,10 @@ public class RedisConfig {
     @Bean
     JedisConnectionFactory jedisConnectionFactory(){
         RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration();
-        redisStandaloneConfiguration.setHostName(redisHostName);
-        redisStandaloneConfiguration.setPort(redisPort);
-        redisStandaloneConfiguration.setUsername(redisUsername);
-        redisStandaloneConfiguration.setPassword(redisPassword);
+//        redisStandaloneConfiguration.setHostName(redisHostName);
+//        redisStandaloneConfiguration.setPort(redisPort);
+//        redisStandaloneConfiguration.setUsername(redisUsername);
+//        redisStandaloneConfiguration.setPassword(redisPassword);
         return new JedisConnectionFactory(redisStandaloneConfiguration);
     }
 
